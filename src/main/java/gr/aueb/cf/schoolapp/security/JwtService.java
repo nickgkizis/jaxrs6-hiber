@@ -31,7 +31,7 @@ public class JwtService {
         claims.put("role", role);
         return Jwts
                 .builder()
-                .setIssuer("self") // todo
+                .setIssuer("self")
                 .setClaims(claims)
                 .setSubject(username)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
