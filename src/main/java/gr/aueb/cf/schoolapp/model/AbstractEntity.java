@@ -1,4 +1,4 @@
-package gr.aueb.cf.schoolapp.Model;
+package gr.aueb.cf.schoolapp.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.MappedSuperclass;
