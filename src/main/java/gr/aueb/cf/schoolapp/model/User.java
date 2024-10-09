@@ -1,4 +1,4 @@
-package gr.aueb.cf.schoolapp.Model;
+package gr.aueb.cf.schoolapp.model;
 
 import gr.aueb.cf.schoolapp.core.enums.RoleType;
 import jakarta.persistence.*;
