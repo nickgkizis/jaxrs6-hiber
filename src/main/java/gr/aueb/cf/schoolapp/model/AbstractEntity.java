@@ -12,26 +12,26 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@MappedSuperclass
 @Getter
 @Setter
 @DynamicUpdate
+@MappedSuperclass
 public abstract class AbstractEntity implements Serializable {
 
-    @Column(name="created_at", updatable=false, nullable=false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    @Column(name= "updated_at")
+    @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @Column(unique = true, nullable = false, updatable = false)
+    @Column(unique = true, updatable = false, nullable = false)
     private String uuid;
 
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();
         updatedAt = LocalDateTime.now();
-        if(uuid==null)uuid = UUID.randomUUID().toString();
+        if (uuid == null) uuid = UUID.randomUUID().toString();
     }
 
     @PreUpdate

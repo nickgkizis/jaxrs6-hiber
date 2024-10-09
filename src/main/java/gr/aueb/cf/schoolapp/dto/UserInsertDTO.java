@@ -2,7 +2,6 @@ package gr.aueb.cf.schoolapp.dto;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,17 +12,19 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-
 public class UserInsertDTO {
-    @Email(message = "invalid username")
+
+    @Email(message = "Invalid username")
     private String username;
 
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*?\\d)(?=.[*@#$!%&*]).{8,}$",message ="invalid password" )
+    @Pattern(regexp = "^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\\d)(?=.*?[@#$!%&*]).{8,}$",
+            message = "Invalid Password")
     private String password;
 
-    @Pattern(regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*?\\d)(?=.[*@#$!%&*]).{8,}$",message ="invalid password" )
+    @Pattern(regexp = "^(?=.*?[a-z])(?=.*?[A-Z])(?=.*?\\d)(?=.*?[@#$!%&*]).{8,}$",
+            message = "Invalid Password")
     private String confirmPassword;
 
-    @NotEmpty(message = "role cant ne empty")
+    @NotEmpty(message = "Role can not be empty")
     private String role;
 }

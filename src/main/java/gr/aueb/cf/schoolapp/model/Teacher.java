@@ -7,17 +7,18 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@Table(name="teachers")
+@Table(name = "teachers")
 public class Teacher extends AbstractEntity implements IdentifiableEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique=true, nullable=false)
+    @Column(unique = true)
     private String vat;
 
     private String firstname;

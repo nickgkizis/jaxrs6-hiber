@@ -6,22 +6,22 @@ import lombok.*;
 
 @NoArgsConstructor
 @AllArgsConstructor
-//@Data //return all
 @Getter
 @Setter
 public class TeacherUpdateDTO {
-    @NotNull(message="ID is mandatory")
+
+    @NotNull(message = "Ο κωδικός δεν μπορεί να μην υπάρχει.")
     private Long id;
 
-    @NotNull(message="name is mandatory")
-    @Size(min = 2, max = 255, message = "name must be between 2 and 255 characters")
+    @NotNull(message = "Το όνομα δεν μπορεί να μην υπάρχει.")
+    @Size(min = 2, max = 255, message = "Το όνομα πρέπει να είναι μεταξύ 2-255 χαρακτήρων.")
     private String firstname;
 
-    @NotNull(message="lastname is mandatory")
-    @Size(min = 2, max = 255, message = "lastname must be between 2 and 255 characters")
+    @NotNull(message = "Το επώνυμο δεν μπορεί να μην υπάρχει.")
+    @Size(min = 2, max = 255, message = "Το επώνυμο πρέπει να είναι μεταξύ 2-255 χαρακτήρων.")
     private String lastname;
 
-    @NotNull(message = "VAT is mandatory")
-    @Size(min=9, message = "VAT should be at least 9 characters long")
+    @NotNull(message = "Το ΑΦΜ δεν μπορεί να μην υπάρχει.")
+    @Size(min = 9, message = "Το ΑΦΜ πρέπει να περιέχει τουλάχιστον 9 ψηφία.")
     private String vat;
 }

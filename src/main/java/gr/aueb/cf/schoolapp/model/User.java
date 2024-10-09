@@ -4,7 +4,6 @@ import gr.aueb.cf.schoolapp.core.enums.RoleType;
 import jakarta.persistence.*;
 import lombok.*;
 
-import javax.security.auth.Subject;
 import java.security.Principal;
 
 @Entity
@@ -13,18 +12,19 @@ import java.security.Principal;
 @Getter
 @Setter
 @Builder
-@Table(name="users")
-public class User extends AbstractEntity implements IdentifiableEntity, Principal {
+@Table(name = "users")
+public class User extends AbstractEntity
+        implements IdentifiableEntity, Principal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(unique=true)
+    @Column(unique = true)
     private String username;
     private String password;
 
-    @Column(unique=true)
+    @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private RoleType roleType;
 
@@ -32,5 +32,4 @@ public class User extends AbstractEntity implements IdentifiableEntity, Principa
     public String getName() {
         return username;
     }
-
 }
